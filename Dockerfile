@@ -16,10 +16,6 @@ RUN         curl -L -o /tmp/glassfish-4.1.zip http://download.java.net/glassfish
             unzip /tmp/glassfish-4.1.zip -d /usr/local && \
             rm -f /tmp/glassfish-4.1.zip
 
-#clone and deploy the project on the glassfish server
-
-RUN     git clone http://myrepository.git /usr/local/mypath
-RUN     cp /usr/local/mypath/MyProject/MyProject.war /usr/local/glassfish4/glassfish/domains/domain1/autodeploy/MyProject.war
 
 EXPOSE      8090
 
