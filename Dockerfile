@@ -1,10 +1,12 @@
-FROM        java:8-jdk
+FROM        alpine
 
 MAINTAINER  firstname name <firstname.name@domain.com>
 
 ENV         JAVA_HOME         /usr/lib/jvm/java-8-openjdk-amd64
 ENV         GLASSFISH_HOME    /usr/local/glassfish4
 ENV         PATH              $PATH:$JAVA_HOME/bin:$GLASSFISH_HOME/bin
+
+RUN apk add --no-cache curl unzip
 
 RUN         apt-get update && \
             apt-get install -y curl unzip zip inotify-tools && \
